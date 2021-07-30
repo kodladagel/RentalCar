@@ -1,0 +1,21 @@
+<table class="table" style="background-color: #ffffff9f;">  
+    <thead> 
+        <tr>
+            <th>#</th>
+            <th>Marka</th>
+            <th>İsim Soyisim</th>
+            <th>Kiralama Tarihi</th>
+            <th>Dönüş Tarihi</th>
+        </tr>
+
+    </thead>
+    
+    <tr  *ngFor="let rent of rentals">
+       <td>{{rent.rentalId}}</td>
+       <td>{{rent.brandName}}</td>
+       <td>{{rent.firstName}} </td>
+       <td>{{rent.rentDate}}</td>
+       <td>{{rent.returnDate}}</td>
+   </tr>
+
+</table>
