@@ -1,9 +1,12 @@
-<ul class="list-group">
-  <li class="list-group-item active" aria-current="true" style="text-align: center;background-color: cornflowerblue;">COLORS</li>
+<div class="list-group">
+  <button type="button" (click)="setDefaultColor()" routerLink="/cars" class="btn btn-primary">RENKLER</button>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterTextRenk" placeholder="Renk Ara">
 
-  <li *ngFor="let color of colors" (click)="setCurrentColor(color)" routerLink = "/cars/color/{{color.colorId}}" 
-    [class]="getCurrentColorClass(color)">
-    {{color.name}}
-  </li>
+  <button type="button" (click)="setCurrentColor(color)" routerLink="cars/color/{{color.colorId}}"
+    [class]="getCurrentColorClass(color)" *ngFor="let color of colors | colorFilter:filterText">
+    {{ color.name }}
+  </button>
+  <br>
+</div>
 
-</ul>
+<!-- [class]="getAllColorClass()" -->

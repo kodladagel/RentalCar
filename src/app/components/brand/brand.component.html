@@ -1,9 +1,25 @@
+<div class="list-group">
+  <button type="button" (click)="setDefaultBrand()" routerLink="/cars" class="btn btn-primary">MARKALAR</button>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterTextMarka" placeholder="Marka Ara">
+  <button type="button" (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{ brand.brandId }}"
+    [class]="getCurrentBrandClass(brand)" *ngFor="let brand of brands | brandFilter:filterText">
+    {{ brand.name }}
+  </button>
+  <br>
+</div>
+
+<!-- [class]="getAllBrandClass()" -->
+
+<!-- 
 <ul class="list-group">
-  <li class="list-group-item active" aria-current="true" style="text-align: center;background-color: cornflowerblue;">BRANDS</li>
+  <li class="list-group-item active" 
+  routerLink = "/cars"
+  aria-current="true" 
+  style="text-align: center;background-color: cornflowerblue;">BRANDS</li>
 
   <li *ngFor="let brand of brands" (click)="setCurrentBrand(brand)" 
     [class]="getCurrentBrandClass(brand)" routerLink = "/cars/brand/{{brand.brandId}}">
     {{brand.name}}
   </li>
 
-</ul>
+</ul> -->

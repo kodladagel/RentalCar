@@ -1,0 +1,13 @@
+<select class="form-select">
+  <option *ngFor="let option of options" >{{ option.label }}</option>
+</select>
+
+
+<select class="form-select" (ngModelChange)="getSelectedValue($event)" [(ngModel)]="selectedValue">
+  <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+</select>
+
+
+<select class="form-select" (ngModelChange)="getSelectedLabel($event)" [(ngModel)]="selectedLabel">
+  <option *ngFor="let option of options" [value]="option.label">{{ option.label }}</option>
+</select>
