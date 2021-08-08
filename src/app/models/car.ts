@@ -10,4 +10,6 @@ export interface Car{
     description:string;
     carImage: string[];
     available?:boolean;
+    colorId:number;
+    brandId:number;
   }

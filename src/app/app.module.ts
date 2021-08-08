@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,11 +16,15 @@ import { CarFilterPipe } from './pipes/car-filter.pipe';
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { DenemeComponent } from './components/deneme/deneme.component';
-
+import { CarAddComponent } from './components/car-add/car-add.component';
 
 import {ToastrModule} from 'ngx-toastr'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CreditCardComponent } from './components/credit-card/credit-card.component'
+import { CreditCardComponent } from './components/credit-card/credit-card.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+
 
 @NgModule({
   declarations: [
@@ -37,12 +41,18 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
     BrandFilterPipe,
     DenemeComponent,
     CreditCardComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    CarUpdateComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     }),
