@@ -9,4 +9,5 @@ export interface Car{
     modelYear:number;
     description:string;
     carImage: string[];
+    available?:boolean;
   }

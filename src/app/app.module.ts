@@ -18,6 +18,9 @@ import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { DenemeComponent } from './components/deneme/deneme.component';
 
 
+import {ToastrModule} from 'ngx-toastr'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,10 @@ import { DenemeComponent } from './components/deneme/deneme.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
+    BrowserAnimationsModule
     
   ],
   providers: [],
