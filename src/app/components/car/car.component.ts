@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Brand } from 'src/app/models/brand';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
@@ -32,7 +33,8 @@ export class CarComponent implements OnInit {
     private carService: CarService,
     private brandService: BrandService,
     private colorService: ColorService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -119,6 +121,7 @@ export class CarComponent implements OnInit {
 
   setCurrentCar(car: Car) {
     this.currentCar = car
+    this.toastrService.success(car.brandName,"yonlendiriliyorsunuz");
   }
 
 }

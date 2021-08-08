@@ -38,9 +38,10 @@ export class RentalComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomers();
+    this.getRental();
   }
-  getRentals(){
-    this.rentalService.getRentals().subscribe(response=>{
+  getRental(){
+    this.rentalService.getRentalsByCarId(this.car.carId).subscribe(response=>{
       this.rentals=response.data;
       this.dataLoaded=true;
     })
@@ -96,13 +97,18 @@ export class RentalComponent implements OnInit {
       colorName : this.car.colorName,
       dailyPrice : this.car.dailyPrice,
       rentDate : this.rentDate,
-      returnDate : this.returnDate
+      returnDate : this.returnDate,
+      totalPrice: this.totalPrice
       
     };
     if (MyRental.rentDate == undefined||MyRental.rentDate>MyRental.returnDate) {
       console.log(MyRental)
       this.toastrService.error("Hatali bilgi girdiniz","Bilgilerinizi kontrol edin")
-    } else{
+    } 
+    else if(!(this.car.available)){
+      this.toastrService.error("secili tarihler arasi kiralanmis","Arac Musait Degil ")
+    }
+    else{
       this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
       this.toastrService.info(
         'Ödeme sayfasına yönlendiriliyorsunuz...',

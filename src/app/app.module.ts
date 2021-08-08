@@ -19,7 +19,8 @@ import { DenemeComponent } from './components/deneme/deneme.component';
 
 
 import {ToastrModule} from 'ngx-toastr'
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CreditCardComponent } from './components/credit-card/credit-card.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     ColorFilterPipe,
     BrandFilterPipe,
     DenemeComponent,
+    CreditCardComponent,
   ],
   imports: [
     BrowserModule,
